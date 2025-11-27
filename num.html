@@ -6,21 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>複利計算機!</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/tools.js"></script>
 </head>
 
 <body>
     <form action="">
+        <label for="start_money">起始金額</label>
+        <input type="text" id="start_money" name="start_money">
+        <br>
         <label for="month_totle">每月投入金額</label>
         <input type="text" id="month_totle" name="month_totle">
         <br>
-        <label for="start_money">起始金額</label>
-        <input type="text" id="start_money" name="start_money">
-
+        <label for="years">年數</label>
+        <input type="text" id="years" name="years">
         <br>
-        <button>計算</button>
-
-
+        <label for="interest_rate">年利率(%)</label>
+        <input type="text" id="interest_rate" name="interest_rate">
+        <br>
+        <button type="button" onclick="calu()">計算</button>
     </form>
+    <script>
+        function calu() {
+            const start_moneyEl = document.querySelector('#start_money');
+            const month_totleEl = document.querySelector('#month_totle');
+            const interest_rateEl = document.querySelector('#interest_rate');
+            const yearsEl = document.querySelector('#years');
+
+
+            let start_money = start_moneyEl.value;
+            let month_totle = month_totleEl.value;
+            let interest_rate = interest_rateEl.value;
+            let years = yearsEl.value;
+
+            let result = calulate(start_money, month_totle, interest_rate, years);
+            document.write(`經過${years}年後，您的總資產為: ${result}元`);
+
+            console.log(start_money, month_totle, interest_rate, years);
+            //document.write(`起始金額: ${start_money} <br> 每月投入金額: ${month_totle} <br> 年利率: ${interest_rate}%`);
+        }
+
+
+
+
+
+
+    </script>
 </body>
 
 </html>
