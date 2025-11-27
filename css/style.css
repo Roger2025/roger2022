@@ -1,23 +1,56 @@
-body{
-    text-align: center;
+body {
+    font-family: 'Microsoft JhengHei';
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    padding-top:40px;
 }
 
-form{
-    background-color: coral;
-    padding: 20px;
-    border-radius: 40px;
-    display: inline-block;
-    text-align: right;
-    margin-top: 50px;
+.card {
+    width:350px;
+    padding:25px;
+    background:white;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+    border-radius:15px;
 }
 
-button{
-    background-color: rgb(46, 168, 62);
-    border: none;
-    padding: 10px 20px;
-    margin: 20px auto 0px auto;
-    color: #dbebea;
-    border-radius: 20px;
-    text-align: center;
-    display: block
+.card h1 {
+    text-align:center;
+}
+
+label {
+    font-weight:bold;
+    margin-top:15px;
+    display:block;
+}
+
+input, select {
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    font-size:16px;
+}
+
+button {
+    width:100%;
+    margin-top:20px;
+    padding:12px;
+    font-size:16px;
+    border:none;
+    background:#28a745;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover {
+    background:#218838;
+}
+
+.result {
+    margin-top:20px;
+    padding:15px;
+    background:#fafafa;
+    border-left:5px solid #28a745;
+    font-size:18px;
 }

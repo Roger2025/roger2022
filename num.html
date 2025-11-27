@@ -1,56 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>複利計算機!</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>專業複利計算機</title>
+    <link rel="stylesheet" href="css/style.css" />
     <script src="js/tools.js"></script>
 </head>
 
 <body>
-    <form action="">
-        <label for="start_money">起始金額</label>
-        <input type="text" id="start_money" name="start_money">
-        <br>
-        <label for="month_totle">每月投入金額</label>
-        <input type="text" id="month_totle" name="month_totle">
-        <br>
-        <label for="years">年數</label>
-        <input type="text" id="years" name="years">
-        <br>
-        <label for="interest_rate">年利率(%)</label>
-        <input type="text" id="interest_rate" name="interest_rate">
-        <br>
-        <button type="button" onclick="calu()">計算</button>
-    </form>
-    <script>
-        function calu() {
-            const start_moneyEl = document.querySelector('#start_money');
-            const month_totleEl = document.querySelector('#month_totle');
-            const interest_rateEl = document.querySelector('#interest_rate');
-            const yearsEl = document.querySelector('#years');
+    <div class="card">
+        <h1>專業複利計算機</h1>
 
+        <label>起始本金</label>
+        <input type="number" id="start_money" placeholder="例如：1000000">
 
-            let start_money = start_moneyEl.value;
-            let month_totle = month_totleEl.value;
-            let interest_rate = interest_rateEl.value;
-            let years = yearsEl.value;
+        <label>每月投入</label>
+        <input type="number" id="month_totle" placeholder="例如：10000">
 
-            let result = calulate(start_money, month_totle, interest_rate, years);
-            document.write(`經過${years}年後，您的總資產為: ${result}元`);
+        <label>投資期間（年）</label>
+        <input type="number" id="years" placeholder="例如：40">
 
-            console.log(start_money, month_totle, interest_rate, years);
-            //document.write(`起始金額: ${start_money} <br> 每月投入金額: ${month_totle} <br> 年利率: ${interest_rate}%`);
-        }
+        <label>年利率（%）</label>
+        <input type="number" id="interest_rate" placeholder="例如：12">
 
+        <label>複利方式</label>
+        <select id="compound_mode">
+            <option value="year">年複利</option>
+            <option value="month">月複利</option>
+        </select>
 
+        <label>投入時點</label>
+        <select id="deposit_time">
+            <option value="end">期末投入（一般）</option>
+            <option value="begin">期初投入（較高收益）</option>
+        </select>
 
+        <button onclick="calu()">計算</button>
 
-
-
-    </script>
+        <div class="result" id="result"></div>
+    </div>
 </body>
 
 </html>
