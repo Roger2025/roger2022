@@ -73,12 +73,33 @@
     thead {
       background-color: #f2f2f2;
     }
+
+    #tableContainer {
+      max-height: 400px;
+      overflow-y: auto;
+      border: 1px solid black;
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 1024px) {
+      #tableContainer {
+        width: 80%;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      #tableContainer {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
 <body>
   <a href="index.html">前往複利計算機</a>
   <h1>貸款計算機</h1>
+
   <form action="">
     <label for="principal">本金 (元):</label>
     <input type="number" id="principal" name="principal" required placeholder="例:1000000">
@@ -97,24 +118,25 @@
   <div id="result" style="margin-top: 20px;">
 
   </div>
+  <div id="tableContainer">
+    <table id="resultTable">
 
-  <table id="resultTable">
+      <thead>
+        <tr>
+          <th>期數</th>
+          <th>攤還本金</th>
+          <th>攤還利息</th>
+          <th>月付金</th>
+          <th>貸款餘額</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
 
-    <thead>
-      <tr>
-        <th>期數</th>
-        <th>攤還本金</th>
-        <th>攤還利息</th>
-        <th>月付金</th>
-        <th>貸款餘額</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-
-      </tr>
-    </tbody>
-  </table>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 
 
